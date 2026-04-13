@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LichtWerk – Lasergravur & Lasercut</title>
+  <meta name="description" content="LichtWerk – Individuelle Lasergravuren und Lasercut-Produkte aus Holz, Acryl und mehr." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --text: #1f1a16;
+      --text-soft: #5f564d;
+
+      --panel: rgba(248, 243, 236, 0.78);
+      --panel-strong: rgba(255, 249, 242, 0.86);
+      --card: rgba(255, 248, 241, 0.64);
+
+      --accent: #1c1815;
+      --accent-soft: #8b6b4a;
+
+      --border: rgba(255, 255, 255, 0.34);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 20px;
+
+      --max-width: 1280px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(40, 32, 23, 0.18), rgba(40, 32, 23, 0.18)),
+        url("bilder/hintergrund.png") center center / cover no-repeat fixed;
+      padding: 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page-wrap {
+      width: min(100%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .main-panel {
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      overflow: hidden;
+    }
+
+    .logo,
+    .hero-text h1,
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 54px;
+    }
+
+    .logo {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 0.95;
+    }
+
+    .logo span {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 4px;
+      font-weight: 500;
+      margin-top: 10px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  color: #4f463d;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(70, 55, 40, 0.14);
+  font-weight: 600;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.active-link {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+}
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.7rem, 5vw, 5rem);
+      line-height: 0.92;
+      margin-bottom: 22px;
+      max-width: 680px;
+    }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-soft);
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.38);
+      color: var(--text);
+      border: 1px solid rgba(70, 55, 40, 0.14);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.52);
+    }
+
+    .hero-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .feature-card {
+      min-height: 420px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.08));
+    }
+
+    .feature-top {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .feature-bottom {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .feature-link {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+
+    .section-text {
+      color: var(--text-soft);
+      max-width: 720px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .card p {
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .product-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .product-link {
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+      display: block;
+    }
+
+    .product-link:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.14);
+    }
+
+    .product-link:hover .product-image {
+      filter: brightness(1.03);
+    }
+
+    .product-link:hover h3 {
+      color: #000;
+    }
+
+    .product-image {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .product-content {
+      padding: 22px;
+    }
+
+    .product-content h3 {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 1.12rem;
+    }
+
+    .product-content p {
+      color: var(--text-soft);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(28, 24, 21, 0.08);
+      border: 1px solid rgba(28, 24, 21, 0.08);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-box {
+      text-align: center;
+      padding: 34px;
+      background: var(--panel-strong);
+    }
+
+    .contact-box p {
+      color: var(--text-soft);
+      max-width: 680px;
+      margin: 10px auto 24px;
+      line-height: 1.7;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      body {
+        padding: 16px;
+        background-attachment: scroll;
+      }
+
+      .main-panel {
+        padding: 20px;
+        border-radius: 24px;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 34px;
+      }
+
+      .hero,
+      .grid-3,
+      .products,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        min-height: 320px;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="main-panel">
+
+      <header class="nav">
+  <div class="logo">
+    LICHTWERK
+    <span>Lasergravur & Lasercut</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" class="active-link">Startseite</a>
+    <a href="anhaenger.html">Anhänger</a>
+    <a href="deko-schilder.html">Schilder & Deko</a>
+    <a href="sonderanfertigungen.html">Sonderanfertigungen</a>
+    <a href="#kontakt" class="nav-btn">Kontakt</a>
+  </nav>
+</header>
+
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Individuelle Gravuren und Lasercuts mit Charakter</h1>
+          <p>
+            Willkommen bei LichtWerk. Ich fertige kreative und persönliche Produkte
+            aus Holz, Acryl und weiteren Materialien – vom Schlüsselanhänger bis zur
+            dekorativen Einzelanfertigung.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#produkte" class="btn btn-primary">Produkte ansehen</a>
+            <a href="#kontakt" class="btn btn-secondary">Anfrage stellen</a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="feature-card" style="background-image: url('bilder/produkt1.jpg');">
+            <div class="feature-top">Holz & Acryl</div>
+            <div class="feature-bottom">
+              <a href="#produkte" class="feature-link">Anhänger ansehen</a>
+            </div>
+          </div>
+
+          <div class="feature-card" style="background-image: url('bilder/produkt2.jpg');">
+            <div class="feature-top">Deko & Einzelstücke</div>
+            <div class="feature-bottom">
+              <a href="#produkte" class="feature-link">Mehr entdecken</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="leistungen">
+        <h2 class="section-title">Was LichtWerk anbietet</h2>
+        <p class="section-text">
+          Kleine Einzelstücke, personalisierte Geschenke und kreative Designs
+          für Alltag, Deko und besondere Anlässe.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Lasergravur</h3>
+            <p>
+              Präzise Gravuren auf Holz, Acryl und weiteren Materialien – ideal
+              für Namen, Motive, Logos oder persönliche Botschaften.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Lasercut</h3>
+            <p>
+              Saubere Schnitte für Anhänger, Schilder, Aufsteller und dekorative
+              Elemente in verschiedenen Formen und Größen.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Individuelle Wünsche</h3>
+            <p>
+              Du hast eine Idee? Ich setze auch persönliche Motive und
+              Sonderwünsche nach Absprache um.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="produkte">
+        <h2 class="section-title">Beispielprodukte</h2>
+        <p class="section-text">
+          Klicke auf einen Bereich, um mehr Beispielbilder und Inspirationen zu sehen.
+        </p>
+
+        <div class="products">
+          <a href="anhaenger.html" class="card product-card product-link">
+            <div class="product-image" style="background-image: linear-gradient(rgba(20, 15, 10, 0.16), rgba(20, 15, 10, 0.28)), url('bilder/produkt1.jpg');"></div>
+            <div class="product-content">
+              <h3>Personalisierte Anhänger</h3>
+              <p>Aus Holz oder Acryl, auf Wunsch mit Namen, Fahrzeugmotiv oder Symbol.</p>
+              <span class="tag">Holz / Acryl</span>
+            </div>
+          </a>
+
+          <a href="deko-schilder.html" class="card product-card product-link">
+            <div class="product-image" style="background-image: linear-gradient(rgba(20, 15, 10, 0.16), rgba(20, 15, 10, 0.28)), url('bilder/produkt2.jpg');"></div>
+            <div class="product-content">
+              <h3>Schilder & Deko</h3>
+              <p>Dekorative Designs für Zuhause, Werkstatt oder als Geschenk.</p>
+              <span class="tag">Dekoration</span>
+            </div>
+          </a>
+
+          <a href="sonderanfertigungen.html" class="card product-card product-link">
+            <div class="product-image" style="background-image: linear-gradient(rgba(20, 15, 10, 0.16), rgba(20, 15, 10, 0.28)), url('bilder/produkt3.png');"></div>
+            <div class="product-content">
+              <h3>Sonderanfertigungen</h3>
+              <p>Eigene Ideen und spezielle Motive können nach Absprache umgesetzt werden.</p>
+              <span class="tag">Custom</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="ueber">
+        <h2 class="section-title">Über LichtWerk</h2>
+
+        <div class="about-grid">
+          <div class="card">
+            <h3>Die Idee</h3>
+            <p>
+              LichtWerk steht für kreative Laserarbeiten mit Fokus auf sauberes
+              Design, hochwertige Wirkung und individuelle Produkte.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Mein Anspruch</h3>
+            <p>
+              Jedes Produkt soll besonders wirken – ob als kleines Geschenk,
+              dekoratives Einzelstück oder persönliche Anfertigung.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt">
+        <div class="card contact-box">
+          <h2 class="section-title">Kontakt</h2>
+          <p>
+            Du möchtest etwas anfragen oder ein individuelles Produkt bestellen?
+            Schreib mir einfach über Instagram oder per E-Mail.
+          </p>
+
+          <div class="hero-buttons" style="justify-content: center;">
+            <a href="https://instagram.com/deinprofil" target="_blank" class="btn btn-primary">Instagram</a>
+            <a href="mailto:deine-mail@beispiel.de?subject=Anfrage%20%C3%BCber%20LichtWerk" class="btn btn-secondary">E-Mail schreiben</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-inner">
+          <div>© 2026 LichtWerk</div>
+          <div>Individuell.Präzise.Handmade</div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
