@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LichtWerk – Sonderanfertigungen</title>
-  <meta name="description" content="Individuelle Sonderanfertigungen von LichtWerk – persönliche Projekte, Einzelstücke und kreative Wunschideen." />
+  <title>LichtWerk – Beispiele</title>
+  <meta name="description" content="Beispiele und Inspirationen von LichtWerk aus Holz, Acryl, weiteren Materialien und im Simson-Bereich." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,19 +205,10 @@
       color: #fff;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      opacity: 0.96;
-    }
-
     .btn-secondary {
       background: rgba(255, 255, 255, 0.38);
       color: var(--text);
       border: 1px solid rgba(70, 55, 40, 0.14);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.52);
     }
 
     .hero-image {
@@ -227,7 +218,7 @@
       position: relative;
       background:
         linear-gradient(to top, rgba(0,0,0,0.38), rgba(0,0,0,0.08)),
-        url("bilder/sonder-hero.jpg") center center / cover no-repeat;
+        url("bilder/beispiele-hero.jpg") center center / cover no-repeat;
       box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
@@ -260,50 +251,35 @@
       margin-bottom: 24px;
     }
 
-    .grid-3,
+    .category-nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .category-nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.38);
+      border: 1px solid rgba(70,55,40,0.14);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
     .gallery {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .gallery {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .card,
     .gallery-card {
       background: var(--card);
       border: 1px solid rgba(255,255,255,0.28);
       border-radius: var(--radius-lg);
+      overflow: hidden;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .card {
-      padding: 24px;
-    }
-
-    .card h3,
-    .gallery-content h3 {
-      margin-bottom: 10px;
-      color: var(--accent);
-      font-size: 1.1rem;
-    }
-
-    .card p,
-    .gallery-content p {
-      color: var(--text-soft);
-      line-height: 1.65;
-      font-size: 0.95rem;
-    }
-
-    .gallery-card {
-      overflow: hidden;
       transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
@@ -321,6 +297,18 @@
 
     .gallery-content {
       padding: 20px;
+    }
+
+    .gallery-content h3 {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 1.08rem;
+    }
+
+    .gallery-content p {
+      color: var(--text-soft);
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
 
     .contact-box {
@@ -395,7 +383,6 @@
       }
 
       .hero-subpage,
-      .grid-3,
       .gallery {
         grid-template-columns: 1fr;
       }
@@ -425,10 +412,9 @@
         width: 100%;
       }
 
-      .hero-text,
-      .card,
       .gallery-content,
-      .contact-box {
+      .contact-box,
+      .hero-text {
         padding: 18px;
       }
 
@@ -495,8 +481,8 @@
 
         <nav class="nav-links">
           <a href="index.html">Startseite</a>
-          <a href="beispiele.html">Beispiele</a>
-          <a href="sonderanfertigungen.html" class="active-link">Sonderanfertigungen</a>
+          <a href="beispiele.html" class="active-link">Beispiele</a>
+          <a href="sonderanfertigungen.html">Sonderanfertigungen</a>
           <a href="materialien.html">Materialien</a>
           <a href="#kontakt" class="nav-btn">Kontakt</a>
         </nav>
@@ -504,158 +490,186 @@
 
       <section class="hero-subpage">
         <div class="hero-text">
-          <span class="eyebrow">Individuell & persönlich</span>
-          <h1 class="page-title">Sonderanfertigungen</h1>
+          <span class="eyebrow">Inspiration & Einblicke</span>
+          <h1 class="page-title">Beispiele</h1>
           <p class="page-intro">
-            Hier geht es um besondere Einzelstücke, persönliche Wunschideen und kreative Projekte,
-            die individuell nach Absprache umgesetzt werden. Wenn du etwas Eigenes im Kopf hast,
-            ist genau das der richtige Bereich.
+            Hier findest du verschiedene Arbeiten und Inspirationen aus den Bereichen Holz,
+            Acryl, weitere Materialien und Simson. So bekommst du einen Eindruck davon,
+            was bei LichtWerk möglich ist.
           </p>
 
-          <div class="hero-buttons">
-            <a href="#beispiele" class="btn btn-primary">Beispiele ansehen</a>
-            <a href="#kontakt" class="btn btn-secondary">Projekt anfragen</a>
+          <div class="category-nav">
+            <a href="#holz">Holz</a>
+            <a href="#acryl">Acryl</a>
+            <a href="#weitere-materialien">Weitere Materialien</a>
+            <a href="#simson">Simson</a>
           </div>
         </div>
 
         <div class="hero-image">
-          <div class="hero-image-label">Nach Wunsch gefertigt</div>
+          <div class="hero-image-label">Verschiedene Materialien & Stile</div>
         </div>
       </section>
 
-      <section id="ideen">
-        <h2 class="section-title">Was möglich ist</h2>
+      <section id="holz">
+        <h2 class="section-title">Holz</h2>
         <p class="section-text">
-          Sonderanfertigungen leben von Ideen. Ob ein persönliches Geschenk, ein besonderes
-          Erinnerungsstück, ein eigenes Motiv oder ein spezielles Szene-Projekt – vieles lässt
-          sich passend zu deinem Wunsch umsetzen.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Eigene Motive</h3>
-            <p>Persönliche Ideen, Namen, Symbole, Fahrzeuge oder spezielle Designs können individuell eingebracht werden.</p>
-          </div>
-
-          <div class="card">
-            <h3>Besondere Formen</h3>
-            <p>Auch ausgefallenere Konturen und Sonderformen lassen sich passend zum Projekt gestalten.</p>
-          </div>
-
-          <div class="card">
-            <h3>Einzelstücke</h3>
-            <p>Ideal für Geschenke, Erinnerungen, Dekorationen oder besondere Projekte mit persönlichem Bezug.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="beispiele">
-        <h2 class="section-title">Beispielprojekte</h2>
-        <p class="section-text">
-          Diese Galerie zeigt dir, in welche Richtung individuelle Projekte gehen können.
-          Hier kannst du später deine eigenen Bilder und Beispiele einsetzen.
+          Holz wirkt warm, natürlich und besonders hochwertig. Es eignet sich hervorragend
+          für Gravuren, Schilder, Anhänger und dekorative Einzelstücke.
         </p>
 
         <div class="gallery">
           <article class="gallery-card">
-            <img src="bilder/sonder-1.jpg" alt="Sonderanfertigung Beispiel 1">
+            <img src="bilder/holz-1.jpg" alt="Beispiel Holzarbeit 1">
             <div class="gallery-content">
-              <h3>Persönliches Einzelstück</h3>
-              <p>Individuell gestaltetes Projekt mit persönlichem Bezug und besonderer Ausführung.</p>
+              <h3>Gravur auf Holz</h3>
+              <p>Schöne natürliche Wirkung mit sauberer Gravur und warmem Gesamtbild.</p>
             </div>
           </article>
 
           <article class="gallery-card">
-            <img src="bilder/sonder-2.jpg" alt="Sonderanfertigung Beispiel 2">
+            <img src="bilder/holz-2.jpg" alt="Beispiel Holzarbeit 2">
             <div class="gallery-content">
-              <h3>Wunschmotiv</h3>
-              <p>Eigene Idee oder Motivvorlage als individuelle Anfertigung umgesetzt.</p>
+              <h3>Holzschild</h3>
+              <p>Ideal für Schilder, Dekorationen oder individuelle Geschenkideen.</p>
             </div>
           </article>
 
           <article class="gallery-card">
-            <img src="bilder/sonder-3.jpg" alt="Sonderanfertigung Beispiel 3">
+            <img src="bilder/holz-3.jpg" alt="Beispiel Holzarbeit 3">
             <div class="gallery-content">
-              <h3>Besondere Form</h3>
-              <p>Sonderkontur oder spezielle Form passend zum Thema und Stil des Projekts.</p>
-            </div>
-          </article>
-
-          <article class="gallery-card">
-            <img src="bilder/sonder-4.jpg" alt="Sonderanfertigung Beispiel 4">
-            <div class="gallery-content">
-              <h3>Geschenkidee</h3>
-              <p>Individuelle Anfertigung als persönliche Geschenkidee mit besonderem Charakter.</p>
-            </div>
-          </article>
-
-          <article class="gallery-card">
-            <img src="bilder/sonder-5.jpg" alt="Sonderanfertigung Beispiel 5">
-            <div class="gallery-content">
-              <h3>Szene-Projekt</h3>
-              <p>Kreative Umsetzung mit Themenbezug, zum Beispiel Fahrzeuge, Werkstatt oder Hobby.</p>
-            </div>
-          </article>
-
-          <article class="gallery-card">
-            <img src="bilder/sonder-6.jpg" alt="Sonderanfertigung Beispiel 6">
-            <div class="gallery-content">
-              <h3>Unikat</h3>
-              <p>Einzelstück mit eigener Idee, passendem Material und individueller Gestaltung.</p>
+              <h3>Holzanhänger</h3>
+              <p>Kleine Einzelstücke mit persönlicher Note und natürlicher Optik.</p>
             </div>
           </article>
         </div>
       </section>
 
-      <section id="ablauf">
-        <h2 class="section-title">So läuft eine Anfrage ab</h2>
+      <section id="acryl">
+        <h2 class="section-title">Acryl</h2>
         <p class="section-text">
-          Wenn du schon eine grobe Vorstellung hast, reicht oft schon eine kurze Nachricht
-          mit deiner Idee. Danach kann gemeinsam geschaut werden, was optisch und technisch
-          am besten passt.
+          Acryl wirkt modern, klar und sauber. Besonders geeignet für präzise Formen,
+          moderne Dekorationen oder auffällige Details.
         </p>
 
-        <div class="grid-3">
-          <div class="card">
-            <h3>1. Idee senden</h3>
-            <p>Schick mir dein Wunschmotiv, eine grobe Beschreibung oder ein Beispielbild.</p>
-          </div>
+        <div class="gallery">
+          <article class="gallery-card">
+            <img src="bilder/acryl-1.jpg" alt="Beispiel Acrylarbeit 1">
+            <div class="gallery-content">
+              <h3>Acrylschild</h3>
+              <p>Klare Formensprache und moderne Wirkung für individuelle Projekte.</p>
+            </div>
+          </article>
 
-          <div class="card">
-            <h3>2. Umsetzung abstimmen</h3>
-            <p>Wir klären Form, Material, Größe und die passende Gestaltung für dein Projekt.</p>
-          </div>
+          <article class="gallery-card">
+            <img src="bilder/acryl-2.jpg" alt="Beispiel Acrylarbeit 2">
+            <div class="gallery-content">
+              <h3>Acrylanhänger</h3>
+              <p>Saubere Kanten und eine moderne Optik für besondere Einzelstücke.</p>
+            </div>
+          </article>
 
-          <div class="card">
-            <h3>3. Individuelles Ergebnis</h3>
-            <p>Am Ende entsteht ein persönliches Stück, das auf deine Idee zugeschnitten ist.</p>
-          </div>
+          <article class="gallery-card">
+            <img src="bilder/acryl-3.jpg" alt="Beispiel Acrylarbeit 3">
+            <div class="gallery-content">
+              <h3>Dekorative Acrylidee</h3>
+              <p>Ideal für moderne Akzente und individuelle Gestaltungsideen.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="weitere-materialien">
+        <h2 class="section-title">Weitere Materialien</h2>
+        <p class="section-text">
+          Je nach Projekt kommen auch weitere Werkstoffe oder Materialkombinationen in Frage.
+          So lassen sich Wirkung, Haptik und Stil passend auf die Idee abstimmen.
+        </p>
+
+        <div class="gallery">
+          <article class="gallery-card">
+            <img src="bilder/material-1.jpg" alt="Beispiel weiteres Material 1">
+            <div class="gallery-content">
+              <h3>Kombinierte Materialien</h3>
+              <p>Unterschiedliche Materialien können zusammen eine besonders spannende Wirkung erzeugen.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/material-2.jpg" alt="Beispiel weiteres Material 2">
+            <div class="gallery-content">
+              <h3>Individuelle Lösung</h3>
+              <p>Je nach Wunsch und Verfügbarkeit lassen sich verschiedene Ansätze umsetzen.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/material-3.jpg" alt="Beispiel weiteres Material 3">
+            <div class="gallery-content">
+              <h3>Besondere Oberfläche</h3>
+              <p>Auch andere Oberflächen und Materialarten können interessante Ergebnisse liefern.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="simson">
+        <h2 class="section-title">Simson</h2>
+        <p class="section-text">
+          In diesem Bereich geht es um Motive, Gravuren und kreative Ideen mit Simson-Bezug.
+          Besonders geeignet für Szene-nahe Geschenkideen, Deko oder personalisierte Einzelstücke.
+        </p>
+
+        <div class="gallery">
+          <article class="gallery-card">
+            <img src="bilder/simson-1.jpg" alt="Beispiel Simson Motiv 1">
+            <div class="gallery-content">
+              <h3>Simson-Motiv</h3>
+              <p>Gravuren und Designs mit klarem Zweirad- und Szenebezug.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/simson-2.jpg" alt="Beispiel Simson Motiv 2">
+            <div class="gallery-content">
+              <h3>Personalisierte Szene-Idee</h3>
+              <p>Perfekt für persönliche Motive, Geschenke oder dekorative Einzelstücke.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/simson-3.jpg" alt="Beispiel Simson Motiv 3">
+            <div class="gallery-content">
+              <h3>Lasercut mit Simson-Bezug</h3>
+              <p>Individuelle Formen und Motive passend für Fans und Liebhaber.</p>
+            </div>
+          </article>
         </div>
       </section>
 
       <section id="kontakt">
         <div class="contact-box">
-          <h2 class="section-title">Du hast eine eigene Idee?</h2>
+          <h2 class="section-title">Interesse an einem ähnlichen Projekt?</h2>
           <p>
-            Dann schreib mir einfach über Instagram oder per E-Mail. Eine grobe Beschreibung,
-            ein Bild oder ein Wunschmotiv reichen völlig aus, um gemeinsam die passende Richtung zu finden.
+            Wenn dir ein Stil oder ein Bereich gefällt, schreib mir einfach über Instagram
+            oder per E-Mail und wir schauen gemeinsam, was möglich ist.
           </p>
 
           <div class="hero-buttons" style="justify-content: center;">
             <a href="https://instagram.com/deinprofil" target="_blank" class="btn btn-primary">Instagram</a>
-            <a href="mailto:deine-mail@beispiel.de?subject=Anfrage%20Sonderanfertigung%20%C3%BCber%20LichtWerk" class="btn btn-secondary">E-Mail schreiben</a>
+            <a href="mailto:deine-mail@beispiel.de?subject=Anfrage%20zu%20Beispielen%20%C3%BCber%20LichtWerk" class="btn btn-secondary">E-Mail schreiben</a>
           </div>
         </div>
       </section>
 
       <footer>
-	  <div class="footer-inner">
-	    <div class="footer-left">
-	      <span>© 2026 LichtWerk</span>
- 	     <a href="impressum-datenschutz.html">Impressum & Datenschutz</a>
-	    </div>
-	    <div>Lasergravur • Lasercut • Sonderanfertigungen • Materialien</div>
-	  </div>
+  	<div class="footer-inner">
+ 	   <div class="footer-left">
+   	   <span>© 2026 LichtWerk</span>
+  	    <a href="impressum-datenschutz.html">Impressum & Datenschutz</a>
+  	  </div>
+  	  <div>Lasergravur • Lasercut • Sonderanfertigungen • Materialien</div>
+ 	 </div>
 	</footer>
 
     </div>

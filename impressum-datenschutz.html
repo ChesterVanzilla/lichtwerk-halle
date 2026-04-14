@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LichtWerk – Impressum & Datenschutz</title>
+  <meta name="description" content="Impressum und Datenschutz von LichtWerk." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --text: #1f1a16;
+      --text-soft: #5f564d;
+      --panel: rgba(248, 243, 236, 0.80);
+      --panel-strong: rgba(255, 249, 242, 0.88);
+      --card: rgba(255, 248, 241, 0.66);
+      --accent: #1c1815;
+      --border: rgba(255, 255, 255, 0.34);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(40, 32, 23, 0.18), rgba(40, 32, 23, 0.18)),
+        url("bilder/hintergrund.jpg") center center / cover no-repeat fixed;
+      padding: 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-wrap {
+      width: min(100%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .main-panel {
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      overflow: hidden;
+    }
+
+    .logo,
+    .page-title,
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 0.95;
+    }
+
+    .logo span {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 4px;
+      font-weight: 500;
+      margin-top: 10px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.38);
+      border: 1px solid rgba(70, 55, 40, 0.14);
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      background: rgba(255, 255, 255, 0.52);
+    }
+
+    .hero-text {
+      background: var(--panel-strong);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(28, 24, 21, 0.08);
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .page-title {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 0.92;
+      margin-bottom: 14px;
+    }
+
+    .page-intro {
+      color: var(--text-soft);
+      line-height: 1.75;
+      font-size: 1.03rem;
+      max-width: 760px;
+    }
+
+    section {
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin: 18px 0 8px;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      color: var(--text-soft);
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+
+    .card strong {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-left {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-left a {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .footer-left a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 980px) {
+      body {
+        padding: 12px;
+        background-attachment: scroll;
+      }
+
+      .main-panel {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .logo {
+        font-size: 2rem;
+      }
+
+      .logo span {
+        font-size: 0.72rem;
+        letter-spacing: 2.5px;
+        margin-top: 6px;
+      }
+
+      .hero-text,
+      .card {
+        padding: 18px;
+      }
+
+      .page-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 0.98;
+      }
+
+      .page-intro,
+      .card p {
+        font-size: 0.98rem;
+        line-height: 1.65;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .footer-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="main-panel">
+
+      <header class="nav">
+        <div class="logo">
+          LICHTWERK
+          <span>Lasergravur & Lasercut</span>
+        </div>
+
+        <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+      </header>
+
+      <div class="hero-text">
+        <span class="eyebrow">Rechtliches</span>
+        <h1 class="page-title">Impressum & Datenschutz</h1>
+        <p class="page-intro">
+          Bitte prüfe die Platzhalter sorgfältig und ersetze sie durch deine echten Angaben.
+        </p>
+      </div>
+
+      <section>
+        <div class="card">
+          <h2 class="section-title">Impressum</h2>
+
+          <h3>Angaben gemäß § 5 DDG</h3>
+          <p>
+            <strong>Christian Schönherr</strong><br>
+            LichtWerk<br>
+            Domplatz 6a<br>
+            06108 Halle (Saale)<br>
+            Deutschland
+          </p>
+
+          <h3>Kontakt</h3>
+          <p>
+            E-Mail: halle.lichtwerk@gmail.com<br>
+            Instagram: lichtwerk.halle
+          </p>
+
+          <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+          <p>
+            Christian Schönherr<br>
+            Domplatz 6a<br>
+            06108 Halle (Saale)
+          </p>
+
+          <h3>Hinweis</h3>
+          <p>
+            Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer erhoben und ausgewiesen.
+          </p>
+
+          <h3>Haftung für Inhalte</h3>
+          <p>
+            Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen<br>
+	    Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter nicht verpflichtet, übermittelte<br>
+	    oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine<br>
+	    rechtswidrige Tätigkeit hinweisen.<br>
+	    <br>
+	    Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen<br>
+	    bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer<br>
+	    konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.
+          </p>
+
+ 	  <h3>Online-Streitbeilegung</h3>
+          <p>
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br>
+	    https://ec.europa.eu/consumers/odr/<br><br>
+
+	    Ich bin weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="card">
+          <h2 class="section-title">Datenschutz</h2>
+
+          <h3>1. Allgemeine Hinweise</h3>
+          <p>
+            Der Schutz deiner persönlichen Daten ist mir wichtig. Personenbezogene Daten werden auf dieser Website
+            nur im technisch notwendigen Umfang sowie im Rahmen von Kontaktanfragen verarbeitet.
+          </p>
+
+          <h3>2. Verantwortliche Stelle</h3>
+          <p>
+            Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
+            Christian Schönherr<br>
+	    LichtWerk<br>
+            Domplatz 6a<br>
+            06108 Halle (Saale)<br>
+            E-Mail: halle.lichtwer@gmail.com
+          </p>
+
+          <h3>3. Hosting und Server-Logfiles</h3>
+          <p>
+            Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch technische Informationen erfasst,
+            zum Beispiel Browsertyp, Betriebssystem, Uhrzeit des Seitenaufrufs oder IP-Adresse in Logfiles.
+            Diese Verarbeitung erfolgt zur technischen Bereitstellung und Sicherheit der Website.
+          </p>
+
+          <h3>4. Kontaktaufnahme</h3>
+          <p>
+            Wenn du mich per E-Mail kontaktierst, werden deine Angaben inklusive der von dir angegebenen Kontaktdaten
+            zum Zweck der Bearbeitung deiner Anfrage gespeichert. Diese Daten gebe ich nicht ohne deine Einwilligung weiter.
+          </p>
+
+          <h3>5. Externe Schriftarten</h3>
+          <p>
+            Diese Website verwendet Google Fonts, die derzeit über Server von Google geladen werden. Dabei kann es zur
+            Übermittlung technischer Daten an Google kommen. Falls du das vermeiden möchtest, wäre es besser,
+            die Schriftarten lokal auf dem Webspace einzubinden statt extern zu laden.
+          </p>
+
+          <h3>6. Deine Rechte</h3>
+          <p>
+            Du hast im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft, Berichtigung, Löschung,
+            Einschränkung der Verarbeitung sowie auf Widerspruch gegen die Verarbeitung deiner personenbezogenen Daten.
+          </p>
+
+          <h3>7. Beschwerderecht</h3>
+          <p>
+            Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, wenn du der Ansicht bist,
+            dass die Verarbeitung deiner personenbezogenen Daten nicht rechtmäßig erfolgt.
+          </p>
+
+          <h3>8. Stand</h3>
+          <p>
+            Stand: April 2026
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-inner">
+          <div class="footer-left">
+            <span>© 2026 LichtWerk</span>
+            <a href="impressum-datenschutz.html">Impressum & Datenschutz</a>
+          </div>
+          <div>Lasergravur • Lasercut • Sonderanfertigungen • Materialien</div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
