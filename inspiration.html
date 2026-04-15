@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LichtWerk – Materialien</title>
-  <meta name="description" content="Materialien bei LichtWerk – Holz, Acryl und weitere Möglichkeiten für individuelle Lasergravuren und Lasercuts." />
+  <title>LichtWerk – Inspiration</title>
+  <meta name="description" content="Beispiele und Inspirationen von LichtWerk aus Holz, Acryl, weiteren Materialien und im Simson-Bereich." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,19 +205,10 @@
       color: #fff;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      opacity: 0.96;
-    }
-
     .btn-secondary {
       background: rgba(255, 255, 255, 0.38);
       color: var(--text);
       border: 1px solid rgba(70, 55, 40, 0.14);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.52);
     }
 
     .hero-image {
@@ -227,7 +218,7 @@
       position: relative;
       background:
         linear-gradient(to top, rgba(0,0,0,0.38), rgba(0,0,0,0.08)),
-        url("bilder/materialien-hero.jpg") center center / cover no-repeat;
+        url("bilder/beispiele-hero.jpg") center center / cover no-repeat;
       box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
@@ -260,14 +251,14 @@
       margin-bottom: 24px;
     }
 
-    .material-nav {
+    .category-nav {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       margin-top: 12px;
     }
 
-    .material-nav a {
+    .category-nav a {
       padding: 10px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,0.38);
@@ -276,62 +267,48 @@
       font-size: 0.92rem;
     }
 
-    .material-block {
+    .gallery {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 22px;
-      align-items: center;
-      margin-top: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .material-image {
-      min-height: 320px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-    }
-
-    .material-content {
+    .gallery-card {
       background: var(--card);
       border: 1px solid rgba(255,255,255,0.28);
       border-radius: var(--radius-lg);
-      padding: 24px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      overflow: hidden;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      backdrop-filter: blur(10px);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .material-content h3 {
-      margin-bottom: 12px;
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.14);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-content {
+      padding: 20px;
+    }
+
+    .gallery-content h3 {
+      margin-bottom: 8px;
       color: var(--accent);
-      font-size: 1.25rem;
+      font-size: 1.08rem;
     }
 
-    .material-content p {
+    .gallery-content p {
       color: var(--text-soft);
-      line-height: 1.7;
-      margin-bottom: 14px;
-    }
-
-    .material-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .material-item {
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.34);
-      color: var(--text-soft);
-      line-height: 1.55;
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-
-    .material-item strong {
-      color: var(--accent);
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
 
     .contact-box {
@@ -406,12 +383,11 @@
       }
 
       .hero-subpage,
-      .material-block {
+      .gallery {
         grid-template-columns: 1fr;
       }
 
-      .hero-image,
-      .material-image {
+      .hero-image {
         min-height: 240px;
       }
 
@@ -436,9 +412,9 @@
         width: 100%;
       }
 
-      .hero-text,
-      .material-content,
-      .contact-box {
+      .gallery-content,
+      .contact-box,
+      .hero-text {
         padding: 18px;
       }
 
@@ -505,123 +481,178 @@
 
         <nav class="nav-links">
           <a href="index.html">Startseite</a>
-          <a href="inspiration.html">Inspiration</a>
+          <a href="inspiration.html" class="active-link">Inspiration</a>
           <a href="sonderanfertigungen.html">Sonderanfertigungen</a>
-          <a href="materialien.html" class="active-link">Materialien</a>
+          <a href="materialien.html">Materialien</a>
           <a href="#kontakt" class="nav-btn">Kontakt</a>
         </nav>
       </header>
 
       <section class="hero-subpage">
         <div class="hero-text">
-          <span class="eyebrow">Materialien & Möglichkeiten</span>
-          <h1 class="page-title">Materialien</h1>
+          <span class="eyebrow">Inspiration & Einblicke</span>
+          <h1 class="page-title">Galerie</h1>
           <p class="page-intro">
-            Je nach Projekt passt nicht jedes Material gleich gut. Holz, Acryl und weitere
-            Werkstoffe haben jeweils eine eigene Wirkung und eignen sich für unterschiedliche
-            Anwendungen. Hier bekommst du einen Überblick über die Möglichkeiten bei LichtWerk.
+            Hier findest du verschiedene Arbeiten und Inspirationen aus vergangenen Projekten in den unterschiedlichen Bereichen. 
+	    So bekommst du einen Eindruck davon,
+            was bei LichtWerk möglich ist.
           </p>
 
-          <div class="material-nav">
+          <div class="category-nav">
             <a href="#holz">Holz</a>
             <a href="#acryl">Acryl</a>
             <a href="#weitere-materialien">Weitere Materialien</a>
+            <a href="#simson">Simson</a>
           </div>
         </div>
 
         <div class="hero-image">
-          <div class="hero-image-label">Optik, Wirkung & Einsatz</div>
+          <div class="hero-image-label">Verschiedene Materialien & Stile</div>
         </div>
       </section>
 
       <section id="holz">
         <h2 class="section-title">Holz</h2>
         <p class="section-text">
-          Holz ist eines der beliebtesten Materialien für Gravuren und dekorative Arbeiten.
-          Es wirkt warm, natürlich und hochwertig und passt besonders gut zu rustikalen,
-          klassischen oder gemütlichen Gestaltungen.
+          Holz wirkt warm, natürlich und besonders hochwertig. Es eignet sich hervorragend
+          für Gravuren, Schilder, Anhänger und dekorative Einzelstücke.
         </p>
 
-        <div class="material-block">
-          <div class="material-image" style="background-image: linear-gradient(rgba(20,15,10,0.12), rgba(20,15,10,0.20)), url('bilder/material-holz.jpg');"></div>
-
-          <div class="material-content">
-            <h3>Eigenschaften von Holz</h3>
-            <p>
-              Holz eignet sich hervorragend für Gravuren, Schilder, Anhänger, Deko-Elemente
-              und viele persönliche Geschenkideen. Durch die natürliche Maserung entsteht
-              oft eine besonders schöne und individuelle Wirkung.
-            </p>
-
-            <div class="material-list">
-              <div class="material-item"><strong>Wirkung:</strong> warm, natürlich, hochwertig</div>
-              <div class="material-item"><strong>Gut geeignet für:</strong> Gravuren, Schilder, Deko, Anhänger</div>
-              <div class="material-item"><strong>Besonders schön bei:</strong> persönlichen Motiven, Namen, Sprüchen und dekorativen Designs</div>
+        <div class="gallery">
+          <article class="gallery-card">
+            <img src="bilder/holz-1.jpg" alt="Beispiel Holzarbeit 1">
+            <div class="gallery-content">
+              <h3>Gravur auf Holz</h3>
+              <p>Schöne natürliche Wirkung mit sauberer Gravur und warmem Gesamtbild.</p>
             </div>
-          </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/holz-2.jpg" alt="Beispiel Holzarbeit 2">
+            <div class="gallery-content">
+              <h3>Holzschild</h3>
+              <p>Ideal für Schilder, Dekorationen oder individuelle Geschenkideen.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/holz-3.jpg" alt="Beispiel Holzarbeit 3">
+            <div class="gallery-content">
+              <h3>Holzanhänger</h3>
+              <p>Kleine Einzelstücke mit persönlicher Note und natürlicher Optik.</p>
+            </div>
+          </article>
         </div>
       </section>
 
       <section id="acryl">
         <h2 class="section-title">Acryl</h2>
         <p class="section-text">
-          Acryl wirkt klar, modern und sauber. Es eignet sich gut für präzise Formen,
-          moderne Schilder, Anhänger oder dekorative Projekte mit etwas technischerem oder
-          hochwertig-glattem Look.
+          Modern, sauber und klar – ideal für präzise Formen und besondere optische Akzente. 
+	  Hierbei setze ich nur auf hochwertiges GS Acrylglas.
         </p>
 
-        <div class="material-block">
-          <div class="material-image" style="background-image: linear-gradient(rgba(20,15,10,0.12), rgba(20,15,10,0.20)), url('bilder/material-acryl.jpg');"></div>
-
-          <div class="material-content">
-            <h3>Eigenschaften von Acryl</h3>
-            <p>
-              Acryl ist ideal, wenn eine moderne, klare und saubere Optik gewünscht ist.
-              Gerade bei Formen, Konturen, Schildern oder kleinen individuellen Einzelstücken
-              bietet es viele spannende Möglichkeiten.
-            </p>
-
-            <div class="material-list">
-              <div class="material-item"><strong>Wirkung:</strong> modern, klar, sauber</div>
-              <div class="material-item"><strong>Gut geeignet für:</strong> Schilder, Anhänger, Deko, moderne Designs</div>
-              <div class="material-item"><strong>Besonders schön bei:</strong> klaren Linien, präzisen Konturen und modernen Motiven</div>
+        <div class="gallery">
+          <article class="gallery-card">
+            <img src="bilder/acryl-1.jpg" alt="Beispiel Acrylarbeit 1">
+            <div class="gallery-content">
+              <h3>Acrylschild</h3>
+              <p>Klare Formensprache und moderne Wirkung für individuelle Projekte.</p>
             </div>
-          </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/acryl-2.jpg" alt="Beispiel Acrylarbeit 2">
+            <div class="gallery-content">
+              <h3>Acrylanhänger</h3>
+              <p>Saubere Kanten und eine moderne Optik für besondere Einzelstücke.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/acryl-3.jpg" alt="Beispiel Acrylarbeit 3">
+            <div class="gallery-content">
+              <h3>Dekorative Acrylidee</h3>
+              <p>Ideal für moderne Akzente und individuelle Gestaltungsideen.</p>
+            </div>
+          </article>
         </div>
       </section>
 
       <section id="weitere-materialien">
         <h2 class="section-title">Weitere Materialien</h2>
         <p class="section-text">
-          Je nach Projekt und gewünschter Wirkung können auch weitere Materialien oder
-          Kombinationen sinnvoll sein. Das hängt immer davon ab, wie das Endergebnis
-          wirken soll und was technisch und optisch am besten passt.
+          Je nach Projekt kommen auch weitere Werkstoffe oder Materialkombinationen in Frage.
+          So lassen sich Wirkung, Haptik und Stil passend auf die Idee abstimmen.
         </p>
 
-        <div class="material-block">
-          <div class="material-image" style="background-image: linear-gradient(rgba(20,15,10,0.12), rgba(20,15,10,0.20)), url('bilder/material-weitere.jpg');"></div>
+        <div class="gallery">
+          <article class="gallery-card">
+            <img src="bilder/material-1.jpg" alt="Beispiel weiteres Material 1">
+            <div class="gallery-content">
+              <h3>Kombinierte Materialien</h3>
+              <p>Unterschiedliche Materialien können zusammen eine besonders spannende Wirkung erzeugen.</p>
+            </div>
+          </article>
 
-          <div class="material-content">
-            <h3>Weitere Möglichkeiten</h3>
-            <p>
-              Neben Holz und Acryl können je nach Idee auch andere Werkstoffe wie Glas, Leder, SnapPap und viele weitere Werkstoffe bearbeitet werden.<br> <br>
-	    <h3>Was leider nicht möglich ist</h3>
-            <p>
-	      Die Bearbeitung von Metallen wie Blech, Alu und Edelstahl ist leider nicht bei mir möglich.
-            </p>
+          <article class="gallery-card">
+            <img src="bilder/material-2.jpg" alt="Beispiel weiteres Material 2">
+            <div class="gallery-content">
+              <h3>Individuelle Lösung</h3>
+              <p>Je nach Wunsch und Verfügbarkeit lassen sich verschiedene Ansätze umsetzen.</p>
+            </div>
+          </article>
 
-            
-          </div>
+          <article class="gallery-card">
+            <img src="bilder/material-3.jpg" alt="Beispiel weiteres Material 3">
+            <div class="gallery-content">
+              <h3>Besondere Oberfläche</h3>
+              <p>Auch andere Oberflächen und Materialarten können interessante Ergebnisse liefern.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="simson">
+        <h2 class="section-title">Simson</h2>
+        <p class="section-text">
+          In diesem Bereich geht es um Motive, Gravuren und kreative Ideen mit Simson-Bezug.
+          Besonders geeignet für Szene-nahe Geschenkideen, Deko oder personalisierte Einzelstücke.
+        </p>
+
+        <div class="gallery">
+          <article class="gallery-card">
+            <img src="bilder/simson-1.jpg" alt="Beispiel Simson Motiv 1">
+            <div class="gallery-content">
+              <h3>Simson-Motiv</h3>
+              <p>Gravuren und Designs mit klarem Zweirad- und Szenebezug.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/simson-2.jpg" alt="Beispiel Simson Motiv 2">
+            <div class="gallery-content">
+              <h3>Personalisierte Szene-Idee</h3>
+              <p>Perfekt für persönliche Motive, Geschenke oder dekorative Einzelstücke.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="bilder/simson-3.jpg" alt="Beispiel Simson Motiv 3">
+            <div class="gallery-content">
+              <h3>Lasercut mit Simson-Bezug</h3>
+              <p>Individuelle Formen und Motive passend für Fans und Liebhaber.</p>
+            </div>
+          </article>
         </div>
       </section>
 
       <section id="kontakt">
         <div class="contact-box">
-          <h2 class="section-title">Unsicher, welches Material passt?</h2>
+          <h2 class="section-title">Interesse an einem ähnlichen Projekt?</h2>
           <p>
-            Wenn du schon eine Idee hast, aber noch nicht weißt, welches Material dafür am besten
-            geeignet ist, schreib mir einfach. Dann kann gemeinsam geschaut werden, was optisch
-            und praktisch am besten passt.
+            Wenn dir ein Stil oder ein Bereich gefällt, schreib mir einfach über Instagram
+            oder per E-Mail und wir schauen gemeinsam, was möglich ist.
           </p>
 
           <div class="hero-buttons" style="justify-content: center;">
@@ -632,9 +663,9 @@
       </section>
 
       <footer>
- 	 <div class="footer-inner">
+  	<div class="footer-inner">
  	   <div class="footer-left">
-  	    <span>© 2026 LichtWerk</span>
+   	   <span>© 2026 LichtWerk</span>
   	    <a href="impressum-datenschutz.html">Impressum & Datenschutz</a>
   	  </div>
   	  <div>Individuell • Präzise • Handmade</div>
