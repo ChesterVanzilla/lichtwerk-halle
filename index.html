@@ -429,6 +429,41 @@
       text-decoration: underline;
     }
 
+    /* SCROLL TOP BUTTON */
+
+    #scrollTopBtn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255, 249, 242, 0.82);
+      color: var(--accent);
+      font-size: 1.35rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease, background 0.22s ease;
+      z-index: 9999;
+    }
+
+    #scrollTopBtn.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #scrollTopBtn:hover {
+      background: rgba(255, 249, 242, 0.96);
+    }
+
     /* MOBILE */
 
     @media (max-width: 980px) {
@@ -563,6 +598,14 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
+      }
+
+      #scrollTopBtn {
+        right: 14px;
+        bottom: 14px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -700,19 +743,11 @@
         </p>
 
         <div class="about-grid">
-          <div class="card">
-            <h3>Individuelle Projekte</h3>
-            <p>Eigene Formen, besondere Motive, persönliche Gravuren oder angepasste Einzelstücke können nach Absprache umgesetzt werden.</p>
-          </div>
-
-          <div class="card">
-            <h3>Persönliche Umsetzung</h3>
-            <p>Ob als Geschenk, Erinnerung, Dekoration oder Szene-Projekt – vieles lässt sich passend zu deinem Wunsch gestalten.</p>
-          </div>
+          
         </div>
 
         <div class="hero-buttons" style="margin-top: 20px;">
-          <a href="sonderanfertigungen.html" class="btn btn-primary">Zur Seite Sonderanfertigungen</a>
+          <a href="sonderanfertigungen.html" class="btn btn-primary">Zu Sonderanfertigungen</a>
         </div>
       </section>
 
@@ -726,12 +761,12 @@
         <div class="grid-3">
           <div class="card">
             <h3>Holz</h3>
-            <p>Warm, natürlich und besonders schön für Gravuren, Schilder und dekorative Anwendungen.</p>
+            <p>Warm, natürlich und besonders schön für Anhänger, Schilder und dekorative Geschenkideen.</p>
           </div>
 
           <div class="card">
             <h3>Acryl</h3>
-            <p>Modern, sauber und klar – ideal für präzise Formen und besondere optische Akzente. Hierbei setze ich nur auf hochwertiges GS Acrylglas.</p>
+            <p>Ideal für präzise Formen und besondere optische Akzente. Hierbei setze ich nur auf hochwertiges GS Acrylglas.</p>
           </div>
 
           <div class="card">
@@ -773,9 +808,12 @@
     </div>
   </div>
 
+  <button id="scrollTopBtn" aria-label="Nach oben scrollen">↑</button>
+
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
 
     menuToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
@@ -788,6 +826,21 @@
         navLinks.classList.remove("open");
         menuToggle.classList.remove("active");
         menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add("show");
+      } else {
+        scrollTopBtn.classList.remove("show");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
       });
     });
   </script>

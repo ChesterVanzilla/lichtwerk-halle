@@ -372,6 +372,39 @@
 
     /* FOOTER */
 
+#scrollTopBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 249, 242, 0.82);
+  color: var(--accent);
+  font-size: 1.35rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease, background 0.22s ease;
+  z-index: 9999;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+  background: rgba(255, 249, 242, 0.96);
+}
+
     footer {
       margin-top: 28px;
       padding-top: 24px;
@@ -393,6 +426,14 @@
       gap: 14px;
       align-items: center;
       flex-wrap: wrap;
+
+#scrollTopBtn {
+  right: 14px;
+  bottom: 14px;
+  width: 48px;
+  height: 48px;
+  font-size: 1.2rem;
+}
     }
 
     .footer-left a {
@@ -577,7 +618,7 @@
       <section id="holz">
         <h2 class="section-title">Holz</h2>
         <p class="section-text">
-          Holz wirkt warm, natürlich und besonders hochwertig. Es eignet sich hervorragend
+          Holz wirkt warm und natürlich. Es eignet sich hervorragend
           für Gravuren, Schilder, Anhänger und dekorative Einzelstücke.
         </p>
 
@@ -715,10 +756,14 @@
     </div>
   </div>
 
-  <script>
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+<button id="scrollTopBtn" aria-label="Nach oben scrollen">↑</button>
 
+  <script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
       menuToggle.classList.toggle("active", isOpen);
@@ -732,6 +777,24 @@
         menuToggle.setAttribute("aria-expanded", "false");
       });
     });
-  </script>
+  }
+
+  if (scrollTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add("show");
+      } else {
+        scrollTopBtn.classList.remove("show");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+</script>
 </body>
 </html>
